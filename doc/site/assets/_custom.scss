@@ -1,0 +1,55 @@
+:root {
+  --nutshell-dark-purple: #7c3aed;
+  --nutshell-light-purple: #c084fc;
+  --nutshell-text-primary: #4c4c49;
+  --nutshell-text-secondary: #787579;
+}
+
+.menu-custom-item {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.book-menu .external-icon {
+font-size: 0.8em;
+margin-left: 0.4em;
+opacity: 0.7;
+vertical-align: middle;
+}
+
+article a,
+aside.book-toc a,
+#TableOfContents * a {
+  color: var(--nutshell-dark-purple);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--nutshell-light-purple);
+    opacity: 1;
+  }
+
+  &:active {
+    color: var(--nutshell-text-secondary);
+  }
+}
+
+aside.book-toc a,
+#TableOfContents * a {
+    font-size: 0.875rem;
+}
+
+.book-menu a.active,
+aside.book-menu * a {
+  color: var(--nutshell-text-primary);
+
+  &:hover {
+    color: var(--nutshell-text-secondary);
+    opacity: 1;
+  }
+
+  &:active {
+    color: var(--nutshell-text-secondary);
+  }
+}
