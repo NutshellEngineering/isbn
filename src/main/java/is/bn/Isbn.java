@@ -97,6 +97,20 @@ public sealed interface Isbn extends Serializable, Comparable<Isbn> permits Isbn
         };
     }
 
+    /**
+     * Returns a comparator for {@link Isbn} values that orders by canonical 13-digit representation. <p>
+     * This comparator promotes {@link Isbn10} instances to {@link Isbn13} using {@link Isbn10#toIsbn13()},
+     * then compares the resulting 13-digit strings lexicographically. Native {@link Isbn13} values are compared directly. <p>
+     * Ordering respects ISO 2108 encoding rules:
+     * <ul>
+     *   <li>{@code 978}-prefixed ISBN-13 values precede {@code 979}-prefixed ones</li>
+     *   <li>{@link Isbn10} values are positioned according to their equivalent {@link Isbn13}</li>
+     * </ul> <p>
+     *
+     * @implNote If an {@link Isbn10} cannot be converted (e.g. malformed or corrupted), an {@link IllegalStateException} is thrown.
+     * @implNote If an unknown subtype of {@link Isbn} is provided, an {@link IllegalArgumentException} is thrown.
+     * @see Isbn#compareTo(Isbn)
+     */
     static Comparator<Isbn> comparator() {
         return IsbnComparator.INSTANCE;
     }

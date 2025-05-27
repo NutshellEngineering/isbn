@@ -99,6 +99,23 @@ Orders ISBNs by their 13-digit canonical form.
 Returns: result of comparing this ISBN to another  
 Note: ISBN-10 values are promoted to ISBN-13 when possible
 
+### `static Comparator<Isbn> comparator()`
+
+Returns a comparator for `Isbn` values that orders by canonical 13-digit representation.
+
+This comparator promotes `Isbn10` instances to `Isbn13` using `Isbn10.toIsbn13()`, then compares the resulting 13-digit strings lexicographically. Native `Isbn13` values are compared directly.
+
+Ordering respects ISO 2108 encoding rules:
+
+- `978`-prefixed ISBN-13 values precede `979`-prefixed ones
+- `Isbn10` values are positioned according to their equivalent `Isbn13`
+
+Throws:
+- `IllegalStateException` if an `Isbn10` cannot be converted to `Isbn13`
+- `IllegalArgumentException` if an unknown subtype of `Isbn` is provided
+
+See: [`Isbn.compareTo(Isbn)`](#int-comparetoisbn-other)
+
 ---
 
 ## Enum: `Isbn.Version`
