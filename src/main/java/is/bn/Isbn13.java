@@ -1,6 +1,5 @@
 package is.bn;
 
-import jakarta.validation.constraints.Pattern;
 import org.apiguardian.api.API;
 
 import java.util.Optional;
@@ -28,7 +27,6 @@ import java.util.Optional;
  */
 @API(status = API.Status.STABLE, since = "1.0.0")
 public record Isbn13(
-        @Pattern(regexp = "^97[89]\\d{10}$", message = "Invalid ISBN-13 format")
         String value
 ) implements Isbn {
 

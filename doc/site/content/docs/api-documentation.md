@@ -12,8 +12,8 @@ Immutable value types for representing, parsing, validating, and converting ISBN
 
 The `isbn` package provides support for:
 
-- [`Isbn10`](#isbn10) — 10-digit identifiers (pre-2007)
-- [`Isbn13`](#isbn13) — 13-digit identifiers (with `978` or `979` prefix)
+- [`Isbn10`](#isbn10-record) — 10-digit identifiers (pre-2007)
+- [`Isbn13`](#isbn13-record) — 13-digit identifiers (with `978` or `979` prefix)
 - [`Isbn`](#isbn-interface) — a sealed interface unifying both types
 
 The library provides strict format and check digit validation, conversion between formats, and support for Jakarta Bean Validation.
@@ -216,13 +216,3 @@ Returns: the check digit as a string ("0"–"9")
 - ISBN-10: 9 digits followed by a check digit (0–9 or X)
 - ISBN-13: 13 digits starting with 978 or 979
 - Validation is enforced during construction using ISO 2108 check digit algorithms
-
----
-
-## Jakarta Validation
-
-Both `Isbn10` and `Isbn13` use `@Pattern` annotations to integrate with Jakarta Bean Validation.
-
-Use `@Valid` on fields to enable validation in composite objects.
-
-See the [Overview](http://localhost:1313/isbn/#use-with-jakarta-bean-validation) for more information.

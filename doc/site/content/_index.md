@@ -3,9 +3,8 @@
 Rock-solid ISBN support for Java, built on the [ISO 2108 standard](https://www.iso.org/obp/ui/en/#iso:std:iso:2108:ed-4:v1:en).
 
 This library provides immutable value types for parsing, validating,
-comparing, and converting ISBN identifiers. It integrates with Jakarta
-Bean Validation and is suitable for use in domain models, APIs, and form
-handling.
+comparing, and converting ISBN identifiers. It is suitable for use in
+domain models, APIs, and form handling.
 
 Supported features:
 
@@ -13,7 +12,6 @@ Supported features:
 - Unified `Isbn` interface for version detection and conversion
 - Strict format and check digit validation
 - ISO 2108-conforming conversion logic
-- Compatible with Jakarta Bean Validation
 
 ## Getting Started
 
@@ -83,26 +81,3 @@ maybe10.ifPresent(i10 -> System.out.println(i10.value())); // "0306406152"
 new Isbn10("0306406152");   // valid
 new Isbn10("030640615X");   // throws IllegalArgumentException (invalid check digit)
 ```
-
-### Use with Jakarta Bean Validation
-
-{{% hint info %}}
-For information about Jakarta Validation, see the [Getting Started](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/)
-section of the Jakarta Validation Reference Guide.
-{{% /hint %}}
-
-Use `@Valid` on fields of type `Isbn10` or `Isbn13` to trigger
-validation:
-
-``` java
-import jakarta.validation.Valid;
-
-public record Book(
-    @Valid Isbn10 isbn10,
-    String title
-) {}
-```
-
-{{% hint warning %}}
-[`Isbn`](/isbn/docs/api-documentation/#isbn-sealed-interface) is not a datatype, and cannot be validated.
-{{% /hint %}}
