@@ -13,6 +13,7 @@ BookTheme = 'auto'
 BookToC = true
 BookSearch = false
 BookLogo = 'logo.png'
+images = ['image.png']
 
 [languages]
 [languages.en]

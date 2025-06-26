@@ -1,3 +1,7 @@
+---
+description: "Rock-solid ISBN support for Java, built on the ISO 2108 standard"
+---
+
 # isbn
 
 Rock-solid ISBN support for Java, built on the [ISO 2108 standard](https://www.iso.org/obp/ui/en/#iso:std:iso:2108:ed-4:v1:en).

@@ -2,6 +2,7 @@
 weight: 1
 bookFlatSection: true
 title: "API Documentation"
+description: "API Documentation for ISBN | Rock-solid ISBN support for Java, built on the ISO 2108 standard"
 ---
 
 # API Documentation
